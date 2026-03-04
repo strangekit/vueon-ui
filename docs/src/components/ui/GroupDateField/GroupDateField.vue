@@ -44,7 +44,7 @@ watch(selectedRange, (range) => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-2 w-fit relative">
+  <div class="flex flex-col gap-2 w-fit relative ">
     <!-- Label -->
     <Label
       v-if="props.label"

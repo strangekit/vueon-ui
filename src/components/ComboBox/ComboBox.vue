@@ -44,7 +44,7 @@
         :placeholder="props.placeholder || 'Select...'"
       />
       <ComboboxTrigger>
-        <ChevronDown class="h-4 w-4 text-primary" />
+        <ChevronDown class="h-4 w-4 text-primary " />
       </ComboboxTrigger>
     </ComboboxAnchor>
   

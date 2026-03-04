@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { CollapsibleContent as RekaContent } from "reka-ui"
+import './style.css';
 </script>
 
 <template>
   <RekaContent
-    class="CollapsibleContent data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden text-sm text-muted-foreground"
+    class="CollapsibleContent text-sm text-muted-foreground "
   >
     <slot />
   </RekaContent>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, Transition } from "vue";
 import type { DateValue } from "@internationalized/date";
 import { CalendarDate } from "@internationalized/date";
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-vue-next";
@@ -17,6 +17,8 @@ import {
   RangeCalendarNext,
   RangeCalendarHeading,
 } from "reka-ui";
+
+const fixedWeeks = true
 
 const props = defineProps({
   mode: { type: String as () => "single" | "range", default: "single" },
@@ -83,6 +85,7 @@ function pagingFunc(date: DateValue, sign: -1 | 1) {
       :fixed-weeks="fixedWeeks"
       :number-of-months="numberOfMonths"
       class="
+        
         rounded-xl bg-background p-4 shadow-sm border border-border
         transition-all 
         data-[readonly]:opacity-50 data-[readonly]:cursor-not-allowed data-[readonly]:text-muted-foreground
@@ -91,21 +94,21 @@ function pagingFunc(date: DateValue, sign: -1 | 1) {
     >
       <RangeCalendarHeader class="flex items-center justify-between">
         <RangeCalendarPrev
-          class="inline-flex items-center justify-center text-primary rounded-md p-2 w-8 h-8 hover:bg-muted"
+          class="inline-flex items-center justify-center text-primary rounded-md p-2 w-8 h-8 hover:bg-muted active:scale-[0.98] transition-transform duration-100"
           :prev-page="(date: DateValue) => pagingFunc(date, -1)"
           v-if="!props.disableYearNav"
         >
           <ChevronsLeft />
         </RangeCalendarPrev>
-        <RangeCalendarPrev class="inline-flex items-center justify-center text-primary rounded-md p-2 w-8 h-8 hover:bg-muted">
+        <RangeCalendarPrev class="inline-flex items-center justify-center text-primary rounded-md p-2 w-8 h-8 hover:bg-muted active:scale-[0.98] transition-transform duration-100">
           <ChevronLeft />
         </RangeCalendarPrev>
-        <RangeCalendarHeading class="text-sm text-primary font-medium" />
-        <RangeCalendarNext class="inline-flex items-center justify-center text-primary rounded-md p-2 w-8 h-8 hover:bg-muted">
+        <RangeCalendarHeading class="text-sm text-primary font-medium " />
+        <RangeCalendarNext class="inline-flex items-center justify-center text-primary rounded-md p-2 w-8 h-8 hover:bg-muted active:scale-[0.98] transition-transform duration-100">
           <ChevronRight />
         </RangeCalendarNext>
         <RangeCalendarNext
-          class="inline-flex items-center justify-center text-primary rounded-md p-2 w-8 h-8 hover:bg-muted"
+          class="inline-flex items-center justify-center text-primary rounded-md p-2 w-8 h-8 hover:bg-muted active:scale-[0.98] transition-transform duration-100"
           :next-page="(date: DateValue) => pagingFunc(date, 1)"
           v-if="!props.disableYearNav"
         >
@@ -123,6 +126,7 @@ function pagingFunc(date: DateValue, sign: -1 | 1) {
           :week-days="weekDays"
           :unavailable-dates="props.unavailableDates"
           @select="onSelectDate"
+          class="animate-in fade-in duration-250"
         />
       </div>
     </RangeCalendarRoot>
@@ -135,14 +139,15 @@ function pagingFunc(date: DateValue, sign: -1 | 1) {
       :is-date-unavailable="isDateUnavailable"
       :fixed-weeks="fixedWeeks"
       :number-of-months="numberOfMonths"
-      class="rounded-xl bg-background p-4 shadow-sm border border-border"
+      class="rounded-xl bg-background p-4 shadow-sm border border-border "
     >
       <CalendarHeader class="flex items-center justify-between">
-        <CalendarPrev class="inline-flex items-center justify-center text-primary rounded-md w-8 h-8 hover:bg-primary/10">
+        <CalendarPrev class="inline-flex items-center justify-center text-primary rounded-md w-8 h-8 hover:bg-primary/10 active:scale-[0.98] transition-transform duration-100">
           <ChevronLeft />
         </CalendarPrev>
+   
         <CalendarHeading class="text-sm text-primary font-medium" />
-        <CalendarNext class="inline-flex items-center justify-center text-primary rounded-md w-8 h-8 hover:bg-primary/10">
+        <CalendarNext class="inline-flex items-center justify-center text-primary rounded-md w-8 h-8 hover:bg-primary/10 active:scale-[0.98] transition-transform duration-100">
           <ChevronRight />
         </CalendarNext>
       </CalendarHeader>

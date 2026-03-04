@@ -210,24 +210,25 @@ import Layout3Raw from './Layouts/Layout3.vue?raw'
       showCode.value[name] = !showCode.value[name]
     }
     
-    function setDevice(device: 'mobile' | 'tablet' | 'desktop') {
-      switch (device) {
-        case 'mobile':
-          previewWidth.value = 375
-          previewHeight.value = 667
-          break
-        case 'tablet':
-          previewWidth.value = 768
-          previewHeight.value = 1024
-          break
-        default:
-          previewWidth.value = 1240
-          previewHeight.value = 800
-          break
-      }
-    }
+    // function setDevice(device: 'mobile' | 'tablet' | 'desktop') {
+    //   switch (device) {
+    //     case 'mobile':
+    //       previewWidth.value = 375
+    //       previewHeight.value = 667
+    //       break
+    //     case 'tablet':
+    //       previewWidth.value = 768
+    //       previewHeight.value = 1024
+    //       break
+    //     default:
+    //       previewWidth.value = 1240
+    //       previewHeight.value = 800
+    //       break
+    //   }
+    // }
     
     // Scroll tracking
+    
     function scrollTo(index: number) {
       const el = containerRefs.value[index]
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -260,6 +261,30 @@ import Layout3Raw from './Layouts/Layout3.vue?raw'
   const goBack = () => {
     routerback.back()
   }
+
+  const device = ref<'mobile' | 'tablet' | 'desktop'>('desktop')
+  function setDevice(type: 'mobile' | 'tablet' | 'desktop') {
+  device.value = type
+
+  switch (type) {
+    case 'mobile':
+      previewWidth.value = 375
+      previewHeight.value = 667
+      break
+    case 'tablet':
+      previewWidth.value = 768
+      previewHeight.value = 1024
+      break
+    default:
+      previewWidth.value = 1240
+      previewHeight.value = 800
+      break
+  }
+}
+
+
+  
+  
     </script>
     
     <template>
@@ -327,7 +352,7 @@ import Layout3Raw from './Layouts/Layout3.vue?raw'
     
             <!-- Preview -->
             <div
-              class="border border-border/50 rounded-lg overflow-hidden flex justify-center items-center mx-auto w-full max-w-full relative"
+              class="border border-border/50 rounded-lg overflow-hidden flex justify-center items-center mx-auto w-full max-w-full relative [container-type:inline-size]"
               :style="{ width: previewWidth + 'px', height: previewHeight + 'px', transition: 'all 0.2s' }"
             >
               <component :is="item.component" class="w-full h-full" />

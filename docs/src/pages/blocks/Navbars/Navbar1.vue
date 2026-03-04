@@ -47,6 +47,7 @@
         </div>
   
         <!-- Mobile -->
+         <!-- @md:hidden -->
         <Sheet v-model:open="open">
           <SheetTrigger as-child>
             <Button variant="ghost" size="icon" class="md:hidden">

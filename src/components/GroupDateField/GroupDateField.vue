@@ -70,32 +70,43 @@ watch(selectedRange, (range) => {
               :part="segment.part"
               type="start"
               class="
-              px-1 py-0.75 
-              rounded 
-              focus:outline-none 
+               leading-7.5
+               p-0.75 
+              outline-0  
+              rounded-md focus:outline-none 
               focus:ring-2 
               focus:ring-ring 
-              focus:ring-offset-1 placeholder:text-muted dark:placeholder:text-muted 
+              focus:ring-offset-0.5
+              placeholder:text-muted-foreground dark:placeholder:text-muted-foreground 
               text-foreground 
               dark:text-card-foreground 
-              leading-7.5
               transition-shadow duration-150"
             >
               {{ segment.value }}
             </DateRangePickerInput>
           </template>
 
-          <Button variant="ghost" class="mx-2 text-primary">
-            <Minus class="text-xs h-full" />
-          </Button>
+          <div class="w-5 leading-7.5 flex items-center justify-center text-muted-foreground ">
+            <Minus class="text-xs h-4 w-4 px-0.5" />
+          </div>
 
           <!-- End Segment -->
           <template v-for="segment in segments.end" :key="segment.part">
             <DateRangePickerInput
               :part="segment.part"
               type="end"
-              class="px-1 py-0.75 rounded focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-1 placeholder:text-muted-foreground dark:placeholder:text-muted-foreground text-foreground dark:text-card-foreground 
-              leading-7.5 transition-shadow duration-150"
+              class="
+              leading-7.5
+               p-0.75 
+              outline-0  
+              rounded-md focus:outline-none 
+              focus:ring-2 
+              focus:ring-ring 
+              focus:ring-offset-0.5
+              placeholder:text-muted-foreground dark:placeholder:text-muted-foreground 
+              text-foreground 
+              dark:text-card-foreground 
+              transition-shadow duration-150"
             >
               {{ segment.value }}
             </DateRangePickerInput>
@@ -136,13 +147,13 @@ data-[state=closed]:ease-[cubic-bezier(0.32,0,0.35,1)]"
         <DateRangePickerCalendar v-slot="{ weekDays, grid }" class="p-4">
           <!-- Header -->
           <DateRangePickerHeader class="flex items-center justify-between mb-2">
-            <DateRangePickerPrev class="flex items-center justify-center w-8 h-8 rounded-md hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-1">
+            <DateRangePickerPrev class="flex items-center justify-center w-8 h-8 rounded-md hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-1 active:scale-[0.98] transition-transform duration-100">
               <ChevronLeft class="w-4 h-4 " />
             </DateRangePickerPrev>
 
             <DateRangePickerHeading class="text-sm font-medium text-foreground dark:text-card-foreground" />
 
-            <DateRangePickerNext class="flex items-center justify-center w-8 h-8 rounded-md hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-1">
+            <DateRangePickerNext class="flex items-center justify-center w-8 h-8 rounded-md hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-1 active:scale-[0.98] transition-transform duration-100">
               <ChevronRight class="w-4 h-4" />
             </DateRangePickerNext>
           </DateRangePickerHeader>
@@ -181,8 +192,16 @@ data-[state=closed]:ease-[cubic-bezier(0.32,0,0.35,1)]"
                   <DateRangePickerCellTrigger
   :day="weekDate"
   :month="month.value"
-  class="transition-all flex items-center justify-center w-8 h-8 text-sm rounded-md outline-none hover:bg-secondary/10 
-      data-[today]:bg-primary-foreground/90 
+  class="
+    flex items-center justify-center 
+                      w-8 h-8 
+                      mx-0.5
+                      text-sm 
+                      rounded-md 
+                      outline-none 
+                       p-2 border border-transparent  select-none cursor-pointer 
+                      text-foreground hover:bg-accent
+          data-[today]:bg-primary-foreground/90 
           data-[today]:border-input
           data-[outside-view]:text-muted-foreground 
           data-[outside-view]:opacity-50 
@@ -196,7 +215,7 @@ data-[state=closed]:ease-[cubic-bezier(0.32,0,0.35,1)]"
           data-[selected]:bg-primary 
           data-[selected]:text-primary-foreground 
           data-[today=true]:data-[selected]:bg-primary 
-          data-[today]:data-[selected]:bg-primary
+          data-[today=true]:data-[selected]:text-primary-foreground 
           data-[in-range=true]:data-[today=true]:border-transparent
           data-[in-range=true]:data-[unavailable=true]:bg-destructive/40
           data-[in-range=true]:data-[unavailable=true]:text-destructive-foreground
@@ -212,6 +231,8 @@ data-[state=closed]:ease-[cubic-bezier(0.32,0,0.35,1)]"
           data-[range-end]:text-primary-foreground
           data-[focused]:ring-2 
           data-[focused]:ring-ring
+          duration-150 ease-out active:scale-[0.96] transition-all
+                    
   "
 />
 
