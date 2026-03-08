@@ -82,7 +82,7 @@ ${toCSSVars(darkVars)}
   --color-positive: var(--positive);               
   --color-positive-foreground: var(--positive-foreground);
 
-  --color-caution: var(-0caution);                  
+  --color-caution: var(--caution);                  
   --color-caution-foreground: var(--caution-foreground);
 
   --color-border: var(--border);
