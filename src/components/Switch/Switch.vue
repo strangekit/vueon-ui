@@ -16,10 +16,11 @@ const props = defineProps({
     inline-flex h-6 w-10 
     shrink-0 cursor-pointer 
     items-center rounded-full  
-    transition-colors focus-visible:outline-none 
-    focus-visible:ring-2 focus-visible:ring-ring 
+    focus-visible:outline-none 
+    focus-within:ring-2 focus-within:ring-ring/70
+    transition-all
     disabled:cursor-not-allowed disabled:opacity-50 
-    data-[state=checked]:bg-black data-[state=unchecked]:bg-gray-200"
+    data-[state=checked]:bg-primary data-[state=unchecked]:bg-primary/30"
   >
     <SwitchThumb
       class="pointer-events-none block h-[16px] w-[16px] rounded-full bg-white shadow 

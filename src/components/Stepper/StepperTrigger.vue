@@ -30,5 +30,3 @@ import { StepperTrigger as RekaStepperTrigger } from "reka-ui";
   </RekaStepperTrigger>
 </template>
 
-
-<!-- command: git remote add  https://github.com/strangekit/vueon-ui.git -->

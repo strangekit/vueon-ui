@@ -108,6 +108,7 @@ import {
   StepperSeparator
 } from "./components/Stepper"
 import { Truck, CreditCard, CheckCircle } from 'lucide-vue-next'
+import Switch from './components/Switch';
 
 type Step = {
   step: number
@@ -121,10 +122,58 @@ const steps: Step[] = [
   { step: 3, title: "Payment", description: "Confirm payment method", icon: CreditCard },
   { step: 4, title: "Finish", description: "Complete your order", icon: CheckCircle }
 ];
+
+import { 
+  Tabs, 
+  TabsList, 
+  TabsTrigger, 
+  TabsContent, 
+  TabsIndicator 
+} from "./components/Tabs";
+import TimeField from './components/TimeField';
 </script>
 
 <template>
 
+<section class="border h-lvh flex gap-2 items-center justify-center">
+  <TimeField />
+</section>
+<section class="border h-lvh flex gap-2 items-center justify-center">
+  <Tabs default-value="account" class="w-[400px]">
+    <TabsList>
+      <TabsIndicator />
+      <TabsTrigger value="account">Account</TabsTrigger>
+      <TabsTrigger value="followers">Followers</TabsTrigger>
+    </TabsList>
+    <TabsContent value="account">
+      <p class="mt-2 text-sm text-muted-foreground">Manage your account settings here.</p>
+    </TabsContent>
+    <TabsContent value="followers">
+      <div class="mt-2 space-y-2">
+        <div class="flex items-center space-x-2">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="avatar" class="h-8 w-8 rounded-full"/>
+          <span class="text-sm font-medium">@john_doe</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="avatar" class="h-8 w-8 rounded-full"/>
+          <span class="text-sm font-medium">@jane_smith</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="avatar" class="h-8 w-8 rounded-full"/>
+          <span class="text-sm font-medium">@mike_ross</span>
+        </div>
+      </div>
+    </TabsContent>
+  </Tabs>
+</section>
+<section class="border h-lvh flex gap-2 items-center justify-center">
+  <div class="flex items-center space-x-3 mb-4">
+    <Switch id="notifications" />
+    <Label for="notifications">
+      Enable Notifications
+    </Label>
+  </div>  
+</section>
 <!-- <section class="border h-lvh flex gap-2 items-center justify-center"> -->
   <Stepper orientation="horizontal" :default-value="2" class="flex flex-row gap-1 h-lvh w-full max-w-3xl">
           <StepperItem
