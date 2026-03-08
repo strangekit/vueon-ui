@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import Calendar from "../../ui/Calendar";
 import CodeTabs from '../../CodeTabs.vue';
 import CodeBlock from '../../CodeBlock.vue';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "../../ui/Accordion";
 import { Badge } from "../../ui/Badge";
+import { Calendar } from "../../ui/Calendar";
 
 // Installation commands
 const installTabs = [
