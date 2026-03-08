@@ -13,12 +13,12 @@
       </div>
 
       <!-- Desktop -->
-      <ul class="hidden md:flex gap-2 items-center">
+      <ul class="hidden md:flex gap-2 items-center text-primary ">
         <li v-for="link in links" :key="link.to">
           <router-link
             :to="link.to"
             class="p-2 rounded hover:bg-muted"
-            :class="route.path === link.to ? 'bg-primary/5 text-primary' : ''"
+            :class="route.path === link.to ? 'bg-primary/5 text-primary ' : ''"
           >
             {{ link.label }}
           </router-link>

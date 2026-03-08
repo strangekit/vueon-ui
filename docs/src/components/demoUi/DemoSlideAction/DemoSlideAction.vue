@@ -120,7 +120,7 @@
               </AccordionTrigger>
     
               <AccordionContent>
-                <div class="space-y-4 px-4 border-l border-primary/50">
+                <div class="space-y-4 px-4 border-l border-border/50">
                   <div
                     v-for="prop in item.props"
                     :key="prop.name"

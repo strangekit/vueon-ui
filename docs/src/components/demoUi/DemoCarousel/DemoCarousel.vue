@@ -122,7 +122,7 @@ const advancedLoop = ref(true);
           </AccordionTrigger>
 
           <AccordionContent>
-            <div class="mt-3 space-y-5 border-l border-primary/50 px-4">
+            <div class="mt-3 space-y-5 border-l border-border/50 px-4">
               <div v-for="prop in component.props" :key="prop.name" class="space-y-1 border border-border p-4 rounded-2xl relative hover:bg-accent/30 transition">
                 <h4 class="text-lg font-semibold">
                   {{ prop.name }} <span class="text-xs text-muted-foreground font-normal">({{ prop.type }})</span>

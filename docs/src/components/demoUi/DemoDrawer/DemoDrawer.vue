@@ -183,7 +183,7 @@ const drawerProps = [
           <AccordionContent>
             <div
               v-if="component.props.length"
-              class="mt-3 space-y-5 border-l border-primary/50 px-4"
+              class="mt-3 space-y-5 border-l border-border/50 px-4"
             >
               <div
                 v-for="prop in component.props"

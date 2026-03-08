@@ -8,13 +8,13 @@
         bg-popover 
         text-popover-foreground
         rounded-md 
-        border p-1 
+        border border-border/50 p-1 
         shadow-md z-50
         max-h-[var(--reka-context-menu-content-available-height)]
         min-w-[8rem]
         origin-[var(--reka-context-menu-content-transform-origin)]
         overflow-x-hidden overflow-y-auto
-  
+    
         data-[state=open]:animate-in
         data-[state=closed]:animate-out
   
