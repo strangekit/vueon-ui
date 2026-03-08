@@ -1,4 +1,9 @@
 <template>
+  <Alert>
+    <AlertTitle class="text-sm font-medium text-center">
+      Its in early stages,Expect component shifts and new additions daily.
+    </AlertTitle>
+  </Alert>
   <nav class="w-full h-[60px] bg-background border-b border-border shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl h-full mx-auto px-4 flex justify-between items-center">
       
@@ -92,6 +97,8 @@ import { GithubIcon, MenuIcon, Package2Icon } from 'lucide-vue-next'
 import  { ThemeSwitcher } from '@/components/ui/ThemeSwitcher'
 import { onMounted } from 'vue'
 import Badge from './ui/Badge'
+import Alert from './ui/Alert/Alert.vue'
+import { AlertTitle } from './ui/Alert'
 
 
 if (!window.__vueon_theme) {
