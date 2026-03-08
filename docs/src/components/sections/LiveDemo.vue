@@ -323,37 +323,7 @@
 
     </CardContent>
   </Card>
-          <!-- <DriftArea :bounds="{ width: 360, height: 400 }" direction="vertical" drag-style="smooth">
-      <GridSnap class="bg-secondary h-full min-w-full w-[300px]" direction="vertical">
-        <Drift :x="0" :y="0" class=" min-w-full">
-          <div class="w-full h-[100px] border-border bg-card rounded shadow flex gap-2 items-center justify-center">
-            <DriftImage src="/logo.png" class="h-[100px] w-[100px] object-contain" />
-                <div>
-                    <h2>Vueon ui</h2>
-                    <p>design system for your vue</p>
-                </div>
-          </div>
-        </Drift>
-        <Drift :x="0" :y="100" class="min-w-full">
-          <div class="w-full h-[100px] border-border bg-card rounded shadow flex gap-2 items-center justify-center">
-            <DriftImage src="/logos/logo_astro.svg" class="h-[50px] aspect-square object-contain" />
-                <div>
-                    <h2>Vueon ui</h2>
-                    <p>design system for your vue</p>
-                </div>
-          </div>
-        </Drift>
-        <Drift :x="0" :y="200" class=" min-w-full">
-          <div class="w-full h-[100px] border-border bg-card rounded shadow flex gap-2 items-center justify-center">
-            <DriftImage src="/logos/logo_vite.svg" class="h-[50px] aspect-square object-contain" />
-                <div>
-                    <h2>Vueon ui</h2>
-                    <p>design system for your vue</p>
-                </div>
-          </div>
-        </Drift>
-      </GridSnap>
-        </DriftArea> -->
+       
 
        
       </div>
@@ -367,22 +337,22 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
 
-import { Button } from "../../components/ui/Button";
-import { Input } from "../../components/ui/Input";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "../../components/ui/Card";
-// import { Skeleton, SkeletonCircle, SkeletonText } from "../ui/Skeleton";
-import { Switch } from "../../components/ui/Switch";
-import { Label } from "../../components/ui/Label";
-import Toggle from "../../components/ui/Toggle";
-import NumberField from "../../components/ui/NumberField";
-import Indicator from "../../components/ui/Indicator";
+import { Button } from "../ui/Button";
+import { Input } from "../ui/Input";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "../ui/Card";
+import { Skeleton, SkeletonCircle, SkeletonText } from "../ui/Skeleton";
+import { Switch } from "../ui/Switch";
+import { Label } from "../ui/Label";
+import Toggle from "../ui/Toggle";
+import NumberField from "../ui/NumberField";
+import Indicator from "../ui/Indicator";
 
 import {
   DropdownMenu,
   DropdownTrigger,
   DropdownContent,
   DropdownItem,
-} from "../../components/ui/Dropdown";
+} from "../ui/Dropdown";
 
 // Icons
 import {
@@ -410,7 +380,6 @@ import DateField from "../ui/DateField";
 import { SelectContent, SelectItem, SelectRoot, SelectTrigger, SelectValue } from "../ui/Select";
 import { Spinner } from "../ui/Spinner";
 import OtpField from "../ui/OtpField";
-import { Skeleton, SkeletonCircle, SkeletonText } from "../ui/Skeleton";
 
 const aiQuery = ref("");
 const airplaneMode = ref(false);
