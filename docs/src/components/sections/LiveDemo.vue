@@ -370,7 +370,7 @@ import { ref, onMounted, onUnmounted } from "vue";
 import { Button } from "../../components/ui/Button";
 import { Input } from "../../components/ui/Input";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "../../components/ui/Card";
-import { Skeleton, SkeletonCircle, SkeletonText } from "../../components/ui/Skeleton";
+// import { Skeleton, SkeletonCircle, SkeletonText } from "../ui/Skeleton";
 import { Switch } from "../../components/ui/Switch";
 import { Label } from "../../components/ui/Label";
 import Toggle from "../../components/ui/Toggle";
@@ -410,6 +410,7 @@ import DateField from "../ui/DateField";
 import { SelectContent, SelectItem, SelectRoot, SelectTrigger, SelectValue } from "../ui/Select";
 import { Spinner } from "../ui/Spinner";
 import OtpField from "../ui/OtpField";
+import { Skeleton, SkeletonCircle, SkeletonText } from "../ui/Skeleton";
 
 const aiQuery = ref("");
 const airplaneMode = ref(false);
