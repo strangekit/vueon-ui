@@ -4,7 +4,7 @@ import CodeBlock from "../../CodeBlock.vue";
 import CodeTabs from "../../CodeTabs.vue";
 
 import { RadioGroup, RadioGroupItem } from "../../ui/RadioGroup";
-import { Label } from "../../ui/Label";
+import  Label  from "../../ui/Label";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "../../ui/Accordion";
 import { Badge } from "../../ui/Badge";
 
