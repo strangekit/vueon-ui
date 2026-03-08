@@ -1,5 +1,5 @@
 <template>
-    <li role="presentation" aria-hidden="true" :class="class">
+    <li role="presentation" aria-hidden="true" :class="className">
       <slot>
         <component 
           v-if="isIcon" 
@@ -22,7 +22,7 @@
   }
   
   const props = defineProps({
-    class: { type: String, default: '' },
+    className: { type: String, default: '' },
     separator: { type: String, default: 'rightArrow' } 
   })
   

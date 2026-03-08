@@ -9,8 +9,8 @@ import { TabsTrigger as RekaTabsTrigger } from "reka-ui";
       inline-flex items-center justify-center whitespace-nowrap 
       rounded px-3 py-1.5 text-sm font-medium ring-offset-background 
       transition-all focus-visible:outline-none 
-        focus-within:ring-2 focus-within:ring-ring/70
-           active:scale-[0.94] duration-75 ease-out
+      focus-within:ring-2 focus-within:ring-ring/70
+      active:scale-[0.94] duration-75 ease-out
       disabled:pointer-events-none disabled:opacity-50
       data-[state=active]:bg-background 
       data-[state=active]:text-foreground 

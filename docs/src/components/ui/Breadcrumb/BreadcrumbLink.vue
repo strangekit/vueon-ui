@@ -1,14 +1,40 @@
-  <template>
+<!-- <template>
     <router-link
       v-if="to"
       :to="to"
       class="transition-colors hover:text-foreground cursor-pointer"
-      :class="class"
+      :class="className"
     >
       <slot />
     </router-link>
   
-    <span v-else class="transition-colors hover:text-foreground" :class="class">
+    <span v-else class="transition-colors hover:text-foreground" :class="className">
+      <slot />
+    </span>
+  </template>
+  
+  <script setup>
+  import { useRouter } from 'vue-router'
+
+  const props = defineProps({
+    to: { type: [String, Object], default: null },
+    className: { type: String, default: '' }
+  })
+  const router = useRouter()
+  </script>
+   -->
+
+   <template>
+    <router-link
+      v-if="to"
+      :to="to"
+      class="transition-colors hover:text-foreground cursor-pointer"
+      :class="className"
+    >
+      <slot />
+    </router-link>
+  
+    <span v-else class="transition-colors hover:text-foreground" :class="className">
       <slot />
     </span>
   </template>
@@ -18,7 +44,7 @@ import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'  
   const props = defineProps({
     to: { type: [String, Object], default: null },
-    class: { type: String, default: '' }
+    className: { type: String, default: '' }
   })
   const router = useRouter()
   

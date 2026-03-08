@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Input from "../Input"
+import Input from "@/components/Input"
 
 const model = defineModel()
 </script>

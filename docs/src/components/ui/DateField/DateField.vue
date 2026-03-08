@@ -59,7 +59,7 @@ watch(selectedDate, () => {
     >
       <DatePickerField
         v-slot="{ segments }"
-        class=" flex items-center justify-between rounded-lg border border-border/50 bg-card w-fit px-1 py-1.5 shadow-sm text-foreground dark:text-card-foreground focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 transition-colors duration-200 h-10 "
+        class=" flex items-center justify-between rounded-lg border border-border/50 bg-card w-fit px-1 py-1.5 shadow-sm text-foreground dark:text-card-foreground focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 transition-colors duration-200 h-10 transition-all"
       >
         <div class="flex gap-1">
           <template v-for="segment in segments" :key="segment.part">
@@ -74,7 +74,17 @@ watch(selectedDate, () => {
             <DatePickerInput
               v-else
               :part="segment.part"
-              class="p-0.75 outline-0  rounded focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-1 placeholder:text-muted-foreground dark:placeholder:text-muted-foreground text-foreground dark:text-card-foreground transition-shadow duration-150"
+              class="
+              p-0.75 
+              outline-0  
+              rounded-md focus:outline-none 
+              focus:ring-2 
+              focus:ring-ring 
+              focus:ring-offset-0.5
+              placeholder:text-muted-foreground dark:placeholder:text-muted-foreground 
+              text-foreground 
+              dark:text-card-foreground 
+              transition-shadow duration-150"
             >
               {{ segment.value }}
             </DatePickerInput>
@@ -87,7 +97,7 @@ watch(selectedDate, () => {
         <DatePickerTrigger
         
         >
-          <CalendarIcon class="w-5 h-5" />
+          <CalendarIcon class="w-4 h-4  active:scale-[0.98] transition-transform duration-100" />
         </DatePickerTrigger>
     </Button>
 
@@ -119,13 +129,13 @@ data-[state=closed]:ease-[cubic-bezier(0.32,0,0.35,1)]
         <DatePickerArrow class="fill-card stroke-border" />
         <DatePickerCalendar v-slot="{ weekDays, grid }" class="p-4">
           <DatePickerHeader class="flex items-center justify-between mb-2">
-            <DatePickerPrev class="flex items-center justify-center w-8 h-8 rounded-md hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-1">
+            <DatePickerPrev class="flex items-center justify-center w-8 h-8 rounded-md hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-1  active:scale-[0.98] transition-transform duration-100">
               <ChevronLeft class="w-4 h-4 " />
             </DatePickerPrev>
 
             <DatePickerHeading class="text-sm font-medium text-foreground dark:text-card-foreground" />
 
-            <DatePickerNext class="flex items-center justify-center w-8 h-8 rounded-md hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-1">
+            <DatePickerNext class="flex items-center justify-center w-8 h-8 rounded-md hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-1  active:scale-[0.98] transition-transform duration-100">
               <ChevronRight class="w-4 h-4" />
             </DatePickerNext>
           </DatePickerHeader>
@@ -141,7 +151,7 @@ data-[state=closed]:ease-[cubic-bezier(0.32,0,0.35,1)]
                   <DatePickerHeadCell
                     v-for="day in weekDays"
                     :key="day"
-                    class="w-8 text-xs text-center text-muted-foreground"
+                    class="w-8 font-normal text-xs text-center text-muted-foreground"
                   >
                     {{ day }}
                   </DatePickerHeadCell>
@@ -161,19 +171,49 @@ data-[state=closed]:ease-[cubic-bezier(0.32,0,0.35,1)]
                     <DatePickerCellTrigger
                       :day="weekDate"
                       :month="month.value"
-                      class="transition-all flex items-center justify-center w-8 h-8 text-sm rounded-md outline-none hover:bg-secondary/10 
-                         data-[today]:bg-primary-foreground/90 
+                      class="
+                      flex items-center justify-center 
+                      w-8 h-8 
+                      mx-0.5
+                      text-sm 
+                      rounded-md 
+                      outline-none 
+                       p-2 border border-transparent  select-none cursor-pointer 
+                      text-foreground hover:bg-accent
+          data-[today]:bg-primary-foreground/90 
           data-[today]:border-input
           data-[outside-view]:text-muted-foreground 
           data-[outside-view]:opacity-50 
           data-[outside-view]:pointer-events-none
-        
+          data-[unavailable]:text-destructive/60 
+          data-[unavailable]:line-through
+          data-[in-range][data-unavailable]:bg-destructive/40
+          data-[in-range][data-unavailable]:text-destructive-foreground
           data-[disabled]:opacity-40 
           data-[disabled]:cursor-not-allowed
           data-[selected]:bg-primary 
-          data-[selected]:text-primary-foreground
-          data-[selected]:data-[today]:bg-primary
+          data-[selected]:text-primary-foreground 
+          data-[today=true]:data-[selected]:bg-primary 
+          data-[today=true]:data-[selected]:text-primary-foreground 
+          data-[in-range=true]:data-[today=true]:border-transparent
+          data-[in-range=true]:data-[unavailable=true]:bg-destructive/40
+          data-[in-range=true]:data-[unavailable=true]:text-destructive-foreground
+          data-[range-start]:rounded-md
+          data-[range-start]:bg-primary 
+          data-[range-start]:text-primary-foreground 
+          data-[in-range]:bg-accent 
+          data-[in-range]:text-accent-foreground 
+          data-[in-range]:rounded-none 
+          data-[in-range]:shadow-[inset_4px_0_0_theme(colors.accent),inset_-4px_0_0_theme(colors.accent)]
+          data-[range-end]:rounded-md
+          data-[range-end]:bg-primary 
+          data-[range-end]:text-primary-foreground
+          data-[focused]:ring-2 
           data-[focused]:ring-ring
+         
+          
+
+          duration-150 ease-out active:scale-[0.96] transition-all
                       "
                     />
                   </DatePickerCell>

@@ -1,3 +1,2 @@
 import Label from "./Label.vue";
-export default  Label;
-export { Label };   // ← Add this
+export default Label;

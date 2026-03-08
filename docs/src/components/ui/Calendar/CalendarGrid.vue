@@ -9,7 +9,7 @@
     </div>
 
     <!-- Weekday header -->
-    <div class="grid grid-cols-7 text-center mb-2 text-xs uppercase text-foreground/30">
+    <div class="grid grid-cols-7 text-center mb-2 text-xs uppercase text-foreground/30 ">
       <div v-for="day in weekdays" :key="day">{{ day }}</div>
     </div>
 
@@ -30,7 +30,7 @@
         :data-range-end="isRangeEnd(day.date) || null"
         @click="onSelect(day.date)"
         class="
-          p-2 border border-transparent transition-all select-none cursor-pointer rounded-md
+          p-2 border border-transparent  select-none cursor-pointer rounded-md
           text-foreground hover:bg-accent
           data-[today]:bg-primary-foreground/90 
           data-[today]:border-input
@@ -62,6 +62,7 @@
           data-[range-end]:text-primary-foreground
           data-[focused]:ring-2 
           data-[focused]:ring-ring
+          duration-150 ease-out active:scale-[0.96] transition-all
         "
       >
         {{ day.day }}
