@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
-import { variants } from '../theme/variants';
-import { Tooltip } from "@/components/Tooltip";
+import { variants } from '@/components/theme';
+import { Tooltip } from "@/components/ui/Tooltip";
 
 const props = defineProps<{
   mainIcon: any;
