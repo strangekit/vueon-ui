@@ -3,7 +3,7 @@ import { ref } from "vue";
 import CodeBlock from "../../CodeBlock.vue";
 import CodeTabs from "../../CodeTabs.vue";
 
-import { Label } from "../../ui/Label";
+import  Label  from "../../ui/Label";
 import Switch from "../../ui/Switch";
 
 import {
