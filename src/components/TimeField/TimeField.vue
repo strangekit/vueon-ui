@@ -7,7 +7,7 @@ import { Label, TimeFieldInput, TimeFieldRoot } from 'reka-ui'
     <!-- Label -->
     <Label
       for="birthday"
-      class="text-sm font-medium text-secondary-foreground dark:text-primary"
+      class="text-sm font-medium text-secondary-foreground dark:text-white"
     >
       Birthday
     </Label>
