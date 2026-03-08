@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import Button from '@/components/ui/Button';
+    import { Button } from '@/components/ui/Button';
     import Input from '@/components/ui/Input';
     import Separator from '@/components/ui/Separator';
     import { ChromeIcon, TwitchIcon, TwitterIcon } from 'lucide-vue-next';
